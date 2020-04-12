@@ -13,7 +13,6 @@ knowledge. The two relations “friends” (denoted by ∼) and “enemies” (d
     4. If x ∼ y and y ∗ z then x ∗ z (An enemy of a friend is an enemy.)
 Operations setFriends(x,y) and setEnemies(x,y) must preserve these properties.
 """
-# import only system from os
 from os import system, name
 from time import sleep
 
@@ -90,7 +89,10 @@ class WarGame:
         """"All the control for class WarGame is executed here"""
         clear()
         self.people_list = {n for n in range(number_of_people)}
-        print("{}        | ".format(n))
+        print(" --------------- --------------- ")
+        print("| Sample Input  | Sample Output |")
+        print(" --------------- --------------- ")
+        print("| {}            |               |".format(n))
         for operation_list in operation_lists:
             c, x, y = operation_list[0], operation_list[1], operation_list[2]
             result = "Invalid"
@@ -103,13 +105,19 @@ class WarGame:
             elif c == 4:
                 result = self.areEnemies(x, y)
             else:
-                print("Incorrect value operation in = {}".format(operation_list))
+                pass
 
             if result is not None:
-                print("{} | {}".format(operation_list, result))
+                if result == -1: # Remove an space for the - in result
+                    print("| {}     | {}            |".format(operation_list, result))
+                elif result == "Invalid":
+                    print("| {}     |  {}      |".format(operation_list, result))
+                else: # Add an extra space
+                    print("| {}     |  {}            |".format(operation_list, result))
             else:
-                print("{} | ".format(operation_list))
+                print("| {}     |               |".format(operation_list))
 
+        print(" --------------- --------------- \n")
         print("People list {}\nCountry A {}\nCountry B {}".format(self.people_list, self.country_A, self.country_B))
 
 
@@ -128,7 +136,7 @@ if __name__ == "__main__":
             data.append(data_package)
 
         if [0, 0, 0] in data:
-            data.remove([0, 0, 0])
+            # data.remove([0, 0, 0])
             break
 
     war_game = WarGame()
