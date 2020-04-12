@@ -1,0 +1,20 @@
+1. Read all the data and accommodate it in the required structure
+2. Reconocer instrucciones
+3. Crear funciones para instruciones
+
+    10      |
+    1 0 1   | setFriends
+    1 1 2   | setFriends
+    2 0 5   | setEnemies
+    3 0 2   | areFriends 1
+    3 8 9   | areFriends 0
+    4 1 5   | areEnemies 1
+    4 1 2   | areEnemies 0
+    4 8 9   | areEnemies 0
+    1 8 9   | setFriends
+    1 5 2   | setFriends -1
+    3 5 2   | areFriends 0
+    2 2 7   | setEnemies
+    2 6 2   | setEnemies
+    2 0 1   | setEnemies -1
+    0 0 0   |
