@@ -25,6 +25,7 @@ def clear():
     else:
         _ = system('clear')
 
+
 class WarGame:
     """Class for solving project WarGame"""
     people_list = set()
@@ -108,17 +109,22 @@ class WarGame:
                 pass
 
             if result is not None:
-                if result == -1: # Remove an space for the - in result
-                    print("| {}     | {}            |".format(operation_list, result))
+                if result == -1:  # Remove an space for the - in result
+                    print("| {}     | {}            |".format(
+                        operation_list, result))
                 elif result == "Invalid":
-                    print("| {}     |  {}      |".format(operation_list, result))
-                else: # Add an extra space
-                    print("| {}     |  {}            |".format(operation_list, result))
+                    print("| {}     |  {}      |".format(
+                        operation_list, result))
+                else:  # Add an extra space
+                    print("| {}     |  {}            |".format(
+                        operation_list, result))
             else:
                 print("| {}     |               |".format(operation_list))
 
         print(" --------------- --------------- \n")
-        print("People list {}\nCountry A {}\nCountry B {}".format(self.people_list, self.country_A, self.country_B))
+        # print("People list {}\nCountry A {}\nCountry B {}".format(self.people_list, self.country_A, self.country_B))
+        print("Country A {}\nCountry B {}".format(
+            self.country_A, self.country_B))
 
 
 if __name__ == "__main__":
